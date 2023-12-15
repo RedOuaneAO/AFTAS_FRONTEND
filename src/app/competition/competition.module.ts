@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { CompetitionComponent } from './component/competition/competition.component';
 import { AddCompetitionComponent } from './component/add-competition/add-competition.component';
 import { UpdateCompetitionComponent } from './component/update-competition/update-competition.component';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -10,12 +13,12 @@ import { UpdateCompetitionComponent } from './component/update-competition/updat
   declarations: [
     CompetitionComponent,
     AddCompetitionComponent,
-    UpdateCompetitionComponent
-
+    UpdateCompetitionComponent,
   ],
   imports: [
     CommonModule,
-    
+    RouterModule,
+    FormsModule
   ],
   exports:[
     CompetitionComponent,

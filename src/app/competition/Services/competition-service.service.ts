@@ -14,4 +14,7 @@ export class CompetitionServiceService {
   getCompetitions(): Observable<any> {
     return this.http.get(environment.apiURL+'Competitions');
   }
+  addCompetition(formData:any): Observable<any>{
+    return this.http.post(environment.apiURL+'Competition' , formData);
+  }
 }

@@ -1,1 +1,35 @@
-<p>add-competition works!</p>
+<div class="" style="width: 700px;">
+    @if(errorMessages){
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error! </strong> {{errorMessages}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        }
+    <form class="text-center border border-light p-5" (ngSubmit)="onSubmit()">
+        <p class="h4 mb-4">Add Competition</p>
+        <p>Join our mailing list. We write rarely, but only the best content.</p>
+        <div class="row">
+            <div class="px-5">
+                <label for="competitionCode">Competition Code :</label>
+                <input type="text" id="competitionCode" class="form-control mb-4" name="competitionCode" [(ngModel)]="formData.competitionCode" placeholder="competitionCode">
+            </div>
+            <div class="col-6">
+                <label for="CompetitionDate">Competition Date :</label>
+                <input type="date" id="CompetitionDate" class="form-control mb-4" name="date" [(ngModel)]="formData.date" placeholder="Competition Date">
+                <label for="startTime">StartTime :</label>
+                <input type="time" id="startTime" class="form-control mb-4" [(ngModel)]="formData.startTime" name="startTime" placeholder="startTime">
+                <label for="endTime">EndTime :</label>
+                <input type="time" id="endTime" class="form-control mb-4" [(ngModel)]="formData.endTime" name="endTime" placeholder="endTime">
+            </div>
+            <div class="col-6">
+                <label for="ParticipantsNumber">Number Of Participants :</label>
+                <input type="number" id="ParticipantsNumber" min="5" class="form-control mb-4" [(ngModel)]="formData.numberOfParticipants" name="numberOfParticipants" placeholder="Number Of Participants">
+                <label for="location">Location :</label>
+                <input type="text" id="location" class="form-control mb-4" [(ngModel)]="formData.location" name="location" placeholder="location">
+                <label for="amount">Amount :</label>
+                <input type="number" id="amount" min="0" class="form-control mb-4" [(ngModel)]="formData.amount" name="amount" placeholder="amount">
+            </div>
+        </div>
+        <button class="btn btn-primary btn-block text-white px-5" type="submit">Add</button>
+    </form>
+</div>

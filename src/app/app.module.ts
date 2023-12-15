@@ -5,8 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedComponentModule } from './shared-component/shared-component.module';
 import { RouterModule } from '@angular/router';
-import { CompetitionComponent } from './competition/component/competition/competition.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { CompetitionModule } from './competition/competition.module';
 
 
 
@@ -20,7 +22,10 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     SharedComponentModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    CompetitionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
