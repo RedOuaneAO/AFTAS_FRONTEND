@@ -13,28 +13,10 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     }
-<!-- <table class="table" border="1">
-    <thead>
-      <tr>
-        <th scope="col">#Name</th>
-        <th scope="col">averageWeight</th>
-        <th scope="col">points</th>
-      </tr>
-    </thead>
-    <tbody>
-        @for (item of fishs; track $index) {
-        <tr>
-            <td>{{item.name}}</td>
-            <td>{{item.averageWeight}}</td>
-            <td>{{item.level.points}}</td>
-        </tr>
-        }
-    </tbody> -->
-  <!-- </table> -->
   <div class="row">
       @for (item of fishs; track $index) {
         <div class="col-3 mt-4 ">
-            <div class="card " style="width: 18rem;">
+            <div class="card" style="width: 14rem;">
                 <img src="../../../../assets/AFTAS.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h2 class="card-title"><strong>{{item.name}}</strong></h2>

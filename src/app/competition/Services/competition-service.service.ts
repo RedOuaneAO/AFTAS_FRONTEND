@@ -20,4 +20,7 @@ export class CompetitionServiceService {
   particepateIntoCompetition(formData:any): Observable<any>{
     return this.http.post(environment.apiURL+'Rank' , formData);
   }
+  addHunting(formData:any):Observable<any>{
+    return this.http.post(environment.apiURL+'Hunt', formData)
+  }
 }

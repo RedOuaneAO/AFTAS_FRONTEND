@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AddCompetitionComponent } from '../add-competition/add-competition.component';
 import { RegisterInCompetitionComponent } from '../register-in-competition/register-in-competition.component';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { HuntingComponent } from '../hunting/hunting.component';
 
 @Component({
   selector: 'app-competition',
@@ -35,22 +36,23 @@ getCompetitions(){
 addCompetition(){
   const dialog = this.dialog.open(AddCompetitionComponent);
   dialog.afterClosed().subscribe(()=>{
-    // this.competitions = [];
     this.getCompetitions();
   })
   // this.router.navigate(['/AddCompetition']);
 }
-Participate(competitionCode :string){
-  // const dialogConfig: MatDialogConfig = {
-  //   data: {
-  //     competitionCode: competitionCode
-  //   }
-  // };
+participate(competitionCode :string){
       const dialog = this.dialog.open(RegisterInCompetitionComponent, {
         data: {
           competitionCode: competitionCode
         }
       });
+}
+addHunting(competitionCode:string){
+    const dialog = this.dialog.open(HuntingComponent,{
+      data: {
+        competitionCode: competitionCode
+      }
+    })
 }
 
 }

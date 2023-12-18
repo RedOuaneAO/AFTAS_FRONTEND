@@ -1,1 +1,27 @@
-<p>level works!</p>
+<div class="d-flex justify-content-end py-4">
+    <a  class="btn btn-primary" (click)="addLevel()">Add New Fish</a>
+</div>
+@if(successMessages){
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Error! </strong> {{successMessages}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        }
+<div class="row">
+    @for (level of Levels; track $index) {
+        <div class="col-3 mt-4 ">
+            <div class="card " style="width: 14rem;">
+                <img src="../../../../assets/levelsIcons/level{{level.code}}.png" class="card-img-top" alt="not found">
+                <div class="card-body">
+                    <h2 class="card-title"><strong>Level : {{level.code}}</strong></h2>
+                    <p class="card-text"><strong>Description : </strong>{{level.description}}</p>
+                    <p class="card-text"><strong>Points :</strong> {{level.points}}</p>
+                    <div class="d-flex justify-content-evenly">
+                        <!-- <a href="#" class="btn btn-danger">Delete</a> -->
+                        <a href="#" class="btn btn-success">Update</a>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    }
+</div>

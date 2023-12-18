@@ -1,0 +1,43 @@
+<div class="" style="width: 700px;">
+   @if(errorMessages){
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error! </strong> {{errorMessages}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        }
+     @if(successMessages){
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Error! </strong> {{successMessages}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        }
+    <form class="text-center border border-light p-5" (ngSubmit)="addHunt()">
+        <p class="h4 mb-4">Add hunting</p>
+        <p>Join our Participants list. We write rarely, but only the best content.</p>
+        <div class="row">
+            <div>
+                <label for="selectedMemberNum"> Member Name :</label>
+                <select name="selectedMemberNum" id="selectedMemberNum" class="form-control" [(ngModel)]="selectedMember" >
+                    <option disabled selected value="null">Select Member</option>
+                    @for (member of members; track $index) {
+                    <option value="{{member.memberNum}}">{{member.fullName}}</option>
+                    }
+                </select>
+            </div>
+            <div>
+                <label for="fishName"> Fishs Name :</label>
+                <select name="selectedFish" id="fishName" class="form-control" [(ngModel)]="selectedFish" >
+                    <option disabled selected value="null">Select Member</option>
+                    @for (fish of fishs; track $index) {
+                    <option value="{{fish.name}}">{{fish.name}}</option>
+                }
+                </select>
+            </div>
+            <div>
+                <label for="">Fish Weight</label>
+                <input type="number" class="form-control" placeholder="Fish Weight" name="fishWeight" [(ngModel)]="formData.fishWeight">
+            </div>
+        </div>
+        <button class="btn btn-primary btn-block text-white px-5 mt-3" type="submit">Add</button>
+    </form>
+</div>

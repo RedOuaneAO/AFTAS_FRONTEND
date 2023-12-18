@@ -21,7 +21,7 @@ import { RouterModule } from '@angular/router';
   ],
   exports: [
       MemberComponent,
-    AddMemberComponent
+      AddMemberComponent
   ]
 })
 export class MemberModule { }

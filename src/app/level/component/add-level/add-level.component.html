@@ -1,1 +1,19 @@
-<p>add-level works!</p>
+<div class="" style="width: 700px;">
+    <!-- @if(errorMessages){
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error! </strong> {{errorMessages}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        } -->
+    <form class="text-center border border-light p-5" (ngSubmit)="addLevel()" >
+        <p class="h4 mb-4">Add New Level</p>
+        <!-- <p>Join our mailing list. We write rarely, but only the best content.</p> -->
+        <div class="row">
+                <label for="fishName">Points :</label>
+                <input type="number" id="fishName" class="form-control mb-4" name="points" [(ngModel)]="formData.points" placeholder="Points">
+                <label for="averageWeight">Description :</label>
+                <input type="text" id="averageWeight" class="form-control mb-4" name="description" [(ngModel)]="formData.description"  placeholder="Description">
+        </div>
+        <button class="btn btn-primary btn-block text-white px-5" type="submit">Add</button>
+    </form>
+</div>

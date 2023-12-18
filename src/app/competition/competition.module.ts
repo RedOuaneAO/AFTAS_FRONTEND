@@ -6,6 +6,7 @@ import { UpdateCompetitionComponent } from './component/update-competition/updat
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { RegisterInCompetitionComponent } from './component/register-in-competition/register-in-competition.component';
+import { HuntingComponent } from './component/hunting/hunting.component';
 
 
 
@@ -16,6 +17,7 @@ import { RegisterInCompetitionComponent } from './component/register-in-competit
     AddCompetitionComponent,
     UpdateCompetitionComponent,
     RegisterInCompetitionComponent,
+    HuntingComponent,
   ],
   imports: [
     CommonModule,

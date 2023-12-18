@@ -14,7 +14,12 @@
                 <label for="averageWeight">averageWeight :</label>
                 <input type="number" id="averageWeight" class="form-control mb-4" name="averageWeight" [(ngModel)]="formData.averageWeight" placeholder="averageWeight">
                 <label for="levelCode">levelCode :</label>
-                <input type="number" id="levelCode" class="form-control mb-4" name="levelCode" [(ngModel)]="formData.levelCode" placeholder="levelCode">
+                <select name="selectedLevel" id="" class="form-control mb-3 " [(ngModel)]="selectedLevel">
+                    <option value="null">Select Level</option>
+                    @for(level of levels ;track $index){
+                        <option value="{{level.code}}">Level {{level.code}} : {{level.points}} points</option>
+                    }
+                </select>
         </div>
         <button class="btn btn-primary btn-block text-white px-5" type="submit">Add</button>
     </form>

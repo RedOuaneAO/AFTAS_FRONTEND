@@ -7,6 +7,7 @@ import { LevelComponent } from './level/component/level/level.component';
 import { AddMemberComponent } from './member/component/add-member/add-member.component';
 
 const routes: Routes = [
+  {path:'' , component:CompetitionComponent},
   {path:'Competitions' , component:CompetitionComponent},
   {path:'Fishs' , component:FishComponent},
   {path:'Members' , component:MemberComponent},
