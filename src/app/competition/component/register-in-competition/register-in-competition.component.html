@@ -1,0 +1,27 @@
+<div class="" style="width: 700px;">
+    @if(errorMessages){
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error! </strong> {{errorMessages}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        }
+    @if(successMessage){
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Error! </strong> {{successMessage}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        }
+    <form class="text-center border border-light p-5" (ngSubmit)="particepate()">
+        <p class="h4 mb-4">Register to the  Competition</p>
+        <p>Join our Participants list. We write rarely, but only the best content.</p>
+        <div class="row">
+                <select name="selectedMemberNum" id="selectedMemberNum" class="form-control"  [(ngModel)]="selectedMemberNum">
+                    <option disabled selected value="null">Select Member</option>
+                    @for (item of members; track $index) {
+                    <option value="{{item.memberNum}}">{{item.fullName}}</option>
+                }
+            </select>
+        </div>
+        <button class="btn btn-primary btn-block text-white px-5 mt-3" type="submit">Add</button>
+    </form>
+</div>

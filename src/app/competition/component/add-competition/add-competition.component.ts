@@ -22,10 +22,9 @@ export class AddCompetitionComponent {
     // alert(this.formData.endTime)
       this.competitionService.addCompetition(this.formData).subscribe( (response) => {
         console.log('Successfully submitted:', response);
-        this.successMessages ="the competition has been added successfully"
+        this.successMessages ="the competition has been added successfully";
         this.dialogRef.close();
         // this.router.navigate(['/Competitions']);
-        // window.location.reload();
       },
       (error)=>{
         this.errorMessages = error.error.message;

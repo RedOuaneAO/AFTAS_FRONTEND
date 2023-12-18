@@ -1,1 +1,42 @@
-<p>add-member works!</p>
+<div class="col py-3 mt-5" style="height: 100vh">
+    @if(errorMessages){
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error! </strong> {{errorMessages}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        }
+    @if(successMessages){
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Successful! </strong> {{successMessages}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        }
+    <div class="container shadow rounded bg-white border row">
+        <h1 class="fw-bold mt-3 ms-3">Add Member</h1>
+        <form (ngSubmit)="addMember()">
+            <div class=" p-3 py-4">
+                <div class="row mt-2">
+                    <label>First Name :</label><input type="number" name="memberNum" class="form-control my-3" [(ngModel)]="formData.memberNum">
+                    <div class="col-md-6">
+                        <label>First Name :</label><input type="text" name="memberName" class="form-control my-3" [(ngModel)]="formData.memberName">
+                        <label>Second Name :</label><input type="text" name="familyName" class="form-control my-3" placeholder="" [(ngModel)]="formData.familyName"> 
+                        <label>nationality :</label><input type="text" name="nationality" class="form-control my-3" placeholder="" [(ngModel)]="formData.nationality">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Identity Number :</label><input type="text" name="identityNumber" class="form-control my-3" placeholder="identityNumber" [(ngModel)]="formData.identityNumber">
+                        <label>Identity Document Type :</label>
+                        <select class="form-select my-3" name="identityDocumentType" [(ngModel)]="formData.identityDocumentType">
+                            <option value="" disabled selected>Select</option>
+                            <option value="CIN" >CIN</option>
+                            <option value="CARTE_RESIDENCE" >CARTE_RESIDENCE</option>
+                            <option value="PASSPORT" >PASSPORT</option>
+                        </select>
+                        <div class="mt-4 text-end">
+                            <button class="btn btn-outline-primary" type="submit">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

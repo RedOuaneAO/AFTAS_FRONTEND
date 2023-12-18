@@ -1,1 +1,25 @@
-<p>member works!</p>
+<div class="d-flex justify-content-end py-4">
+    <a  class="btn btn-primary" (click)="addNewMember()">Add New Memer</a>
+</div>
+<table class="table" border="1">
+    <thead>
+      <tr>
+        <th scope="col">#Num</th>
+        <th scope="col">full Name</th>
+        <th scope="col">Nationality</th>
+        <th scope="col">identity Number</th>
+        <th scope="col">identityDocumentType</th>
+      </tr>
+    </thead>
+    <tbody>
+        @for (member of members; track $index) {
+        <tr>
+            <td>{{member.memberNum}}</td>
+            <td>{{member.fullName}}</td>
+            <td>{{member.nationality}}</td>
+            <td>{{member.identityNumber}}</td>
+            <td>{{member.identityDocumentType}}</td>
+        </tr>
+        }
+    </tbody> 
+</table>

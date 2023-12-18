@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { CompetitionModule } from './competition/competition.module';
+import { FishModule } from './fish/fish.module';
+import { MemberModule } from './member/member.module';
 
 
 
@@ -25,7 +27,9 @@ import { CompetitionModule } from './competition/competition.module';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    CompetitionModule
+    CompetitionModule,
+    FishModule,
+    MemberModule
   ],
   providers: [],
   bootstrap: [AppComponent]

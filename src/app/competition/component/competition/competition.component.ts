@@ -1,8 +1,9 @@
 import { Component,Inject } from '@angular/core';
 import { CompetitionServiceService } from '../../Services/competition-service.service';
 import { Router } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
 import { AddCompetitionComponent } from '../add-competition/add-competition.component';
+import { RegisterInCompetitionComponent } from '../register-in-competition/register-in-competition.component';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-competition',
@@ -38,6 +39,18 @@ addCompetition(){
     this.getCompetitions();
   })
   // this.router.navigate(['/AddCompetition']);
+}
+Participate(competitionCode :string){
+  // const dialogConfig: MatDialogConfig = {
+  //   data: {
+  //     competitionCode: competitionCode
+  //   }
+  // };
+      const dialog = this.dialog.open(RegisterInCompetitionComponent, {
+        data: {
+          competitionCode: competitionCode
+        }
+      });
 }
 
 }

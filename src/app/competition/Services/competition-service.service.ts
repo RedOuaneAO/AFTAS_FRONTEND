@@ -17,4 +17,7 @@ export class CompetitionServiceService {
   addCompetition(formData:any): Observable<any>{
     return this.http.post(environment.apiURL+'Competition' , formData);
   }
+  particepateIntoCompetition(formData:any): Observable<any>{
+    return this.http.post(environment.apiURL+'Rank' , formData);
+  }
 }

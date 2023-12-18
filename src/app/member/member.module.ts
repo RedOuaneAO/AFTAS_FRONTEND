@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { MemberComponent } from './component/member/member.component';
 import { AddMemberComponent } from './component/add-member/add-member.component';
 import { UpdateMemberComponent } from './component/update-member/update-member.component';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -13,7 +15,13 @@ import { UpdateMemberComponent } from './component/update-member/update-member.c
     UpdateMemberComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    RouterModule,
+  ],
+  exports: [
+      MemberComponent,
+    AddMemberComponent
   ]
 })
 export class MemberModule { }
