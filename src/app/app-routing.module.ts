@@ -5,6 +5,7 @@ import { FishComponent } from './fish/component/fish/fish.component';
 import { MemberComponent } from './member/component/member/member.component';
 import { LevelComponent } from './level/component/level/level.component';
 import { AddMemberComponent } from './member/component/add-member/add-member.component';
+import { RankingComponent } from './ranking/component/ranking/ranking.component';
 
 const routes: Routes = [
   {path:'' , component:CompetitionComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:'Members' , component:MemberComponent},
   {path:'Levels' , component:LevelComponent},
   {path:'AddMember' , component:AddMemberComponent},
+  {path:'Ranking' , component:RankingComponent},
 ];
 
 @NgModule({

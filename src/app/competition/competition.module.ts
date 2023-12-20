@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { RegisterInCompetitionComponent } from './component/register-in-competition/register-in-competition.component';
 import { HuntingComponent } from './component/hunting/hunting.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 
@@ -22,7 +23,8 @@ import { HuntingComponent } from './component/hunting/hunting.component';
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    MatPaginatorModule
   ],
   exports:[
     CompetitionComponent,

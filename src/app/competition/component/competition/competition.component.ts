@@ -6,10 +6,11 @@ import { RegisterInCompetitionComponent } from '../register-in-competition/regis
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { HuntingComponent } from '../hunting/hunting.component';
 
+
 @Component({
   selector: 'app-competition',
   templateUrl: './competition.component.html',
-  styleUrl: './competition.component.css'
+  styleUrl: './competition.component.css',
   
 })
 export class CompetitionComponent {

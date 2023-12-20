@@ -12,6 +12,8 @@ import { CompetitionModule } from './competition/competition.module';
 import { FishModule } from './fish/fish.module';
 import { MemberModule } from './member/member.module';
 import { LevelModule } from './level/level.module';
+import { RankingModule } from './ranking/ranking.module';
+
 
 
 
@@ -31,7 +33,8 @@ import { LevelModule } from './level/level.module';
     CompetitionModule,
     FishModule,
     MemberModule,
-    LevelModule
+    LevelModule,
+    RankingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

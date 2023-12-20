@@ -1,25 +1,34 @@
 <div class="d-flex justify-content-end py-4">
     <a  class="btn btn-primary" (click)="addNewMember()">Add New Memer</a>
 </div>
-<table class="table" border="1">
-    <thead class="">
-      <tr>
-        <th scope="col">#Num</th>
-        <th scope="col">full Name</th>
-        <th scope="col">Nationality</th>
-        <th scope="col">identity Number</th>
-        <th scope="col">identityDocumentType</th>
-      </tr>
-    </thead>
-    <tbody>
-        @for (member of members; track $index) {
-        <tr>
-            <td>{{member.memberNum}}</td>
-            <td>{{member.fullName}}</td>
-            <td>{{member.nationality}}</td>
-            <td>{{member.identityNumber}}</td>
-            <td>{{member.identityDocumentType}}</td>
-        </tr>
-        }
-    </tbody> 
-</table>
+<div class="card shadow mb-4">
+    <div class="card-header py-3 ">
+        <h6 class="m-0 fw-bold text-primary">Members</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+        <table class="table table-striped border">
+            <thead class="">
+            <tr>
+                <th scope="col">#Num</th>
+                <th scope="col">full Name</th>
+                <th scope="col">Nationality</th>
+                <th scope="col">identity Number</th>
+                <th scope="col">identityDocumentType</th>
+            </tr>
+            </thead>
+            <tbody>
+                @for (member of members; track $index) {
+                <tr>
+                    <td>{{member.memberNum}}</td>
+                    <td>{{member.fullName}}</td>
+                    <td>{{member.nationality}}</td>
+                    <td>{{member.identityNumber}}</td>
+                    <td>{{member.identityDocumentType}}</td>
+                </tr>
+                }
+            </tbody> 
+        </table>
+    </div>
+</div>
+</div>

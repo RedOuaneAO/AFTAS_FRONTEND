@@ -30,8 +30,20 @@ export class RegisterInCompetitionComponent {
       this.members=data
       })
   }
-
+  CheckedMembers(memberNum: number){
+    const index = this.selectedMemberNum.indexOf(memberNum);
+    if (index == -1) {
+      this.selectedMemberNum.push(memberNum);
+    } else {
+      this.selectedMemberNum.splice(index, 1);
+    }
+    console.log(this.selectedMemberNum)
+  }
   particepate(){
+    if(this.selectedMemberNum.length==0){
+      this.errorMessages="Please Select a Member"
+      return;
+    }
     this.formData['competitionCode'] = this.data.competitionCode;
     this.formData['memberNum']=this.selectedMemberNum;
     this.competitionService.particepateIntoCompetition(this.formData).subscribe(Response=>{
@@ -41,15 +53,7 @@ export class RegisterInCompetitionComponent {
       this.errorMessages=error.error.message
     })
   }
-  CheckedMembers(memberNum: number): void {
-    const index = this.selectedMemberNum.indexOf(memberNum);
-    if (index == -1) {
-      this.selectedMemberNum.push(memberNum);
-    } else {
-      this.selectedMemberNum.splice(index, 1);
-    }
-    console.log(this.selectedMemberNum)
-  }
+ 
   addNewMember(){
     this.dialogRef.close();
     this.router.navigate(["/AddMember"])

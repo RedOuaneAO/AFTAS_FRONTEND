@@ -23,19 +23,20 @@
                     <tr>
                         <th scope="col">#Num</th>
                         <th scope="col">full Name</th>
-                        <th></th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
                     @for (member of members; track $index) {
-                    <tr>
+                    <tr >
                         <td>{{member.memberNum}}</td>
                         <td>{{member.fullName}}</td>
-                        <td><input type="checkbox" required (change)="CheckedMembers(member.memberNum)"></td>
+                        <td><input type="checkbox"  required (change)="CheckedMembers(member.memberNum)"></td>
                     </tr>
                     }
                 </tbody> 
             </table>
+            
         </div>
         <!-- <div class="row">
                 <select name="selectedMemberNum" id="selectedMemberNum" class="form-control"  [(ngModel)]="selectedMemberNum">
@@ -45,6 +46,6 @@
                     }
                 </select>
         </div> -->
-        <button class="btn btn-primary btn-block text-white px-5 mt-3" type="submit">Participate</button>
+        <button class="btn btn-primary btn-block text-white px-5 mt-3" type="submit">Add Participation</button>
     </form>
 </div>
