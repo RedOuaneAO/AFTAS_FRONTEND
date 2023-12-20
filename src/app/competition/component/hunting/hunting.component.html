@@ -27,15 +27,15 @@
             <div>
                 <label for="fishName"> Fishs Name :</label>
                 <select name="selectedFish" id="fishName" class="form-control" [(ngModel)]="selectedFish" >
-                    <option disabled selected value="null">Select Member</option>
+                    <option disabled selected value="">Select Fish</option>
                     @for (fish of fishs; track $index) {
                     <option value="{{fish.name}}">{{fish.name}}</option>
                 }
                 </select>
             </div>
             <div>
-                <label for="">Fish Weight</label>
-                <input type="number" class="form-control" placeholder="Fish Weight" name="fishWeight" [(ngModel)]="formData.fishWeight">
+                <label for="fishName">Fish Weight</label>
+                <input type="number" id="fishName" class="form-control" placeholder="Fish Weight" name="fishWeight" [(ngModel)]="formData.fishWeight">
             </div>
         </div>
         <button class="btn btn-primary btn-block text-white px-5 mt-3" type="submit">Add</button>

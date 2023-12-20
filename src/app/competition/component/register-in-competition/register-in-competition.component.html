@@ -11,17 +11,40 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         }
+    <div class="p-2 text-end">
+        <button (click)="addNewMember()" class="btn btn-primary">Add Member</button>
+    </div>
     <form class="text-center border border-light p-5" (ngSubmit)="particepate()">
         <p class="h4 mb-4">Register to the  Competition</p>
         <p>Join our Participants list. We write rarely, but only the best content.</p>
-        <div class="row">
+        <div class="table-responsive">
+            <table class="table" border="1">
+                <thead class="">
+                    <tr>
+                        <th scope="col">#Num</th>
+                        <th scope="col">full Name</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (member of members; track $index) {
+                    <tr>
+                        <td>{{member.memberNum}}</td>
+                        <td>{{member.fullName}}</td>
+                        <td><input type="checkbox" required (change)="CheckedMembers(member.memberNum)"></td>
+                    </tr>
+                    }
+                </tbody> 
+            </table>
+        </div>
+        <!-- <div class="row">
                 <select name="selectedMemberNum" id="selectedMemberNum" class="form-control"  [(ngModel)]="selectedMemberNum">
                     <option disabled selected value="null">Select Member</option>
-                    @for (item of members; track $index) {
-                    <option value="{{item.memberNum}}">{{item.fullName}}</option>
-                }
-            </select>
-        </div>
-        <button class="btn btn-primary btn-block text-white px-5 mt-3" type="submit">Add</button>
+                    @for (member of members; track $index) {
+                    <option value="{{member.memberNum}}">{{member.fullName}}</option>
+                    }
+                </select>
+        </div> -->
+        <button class="btn btn-primary btn-block text-white px-5 mt-3" type="submit">Participate</button>
     </form>
 </div>

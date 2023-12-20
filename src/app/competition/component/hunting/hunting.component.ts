@@ -43,7 +43,7 @@ addHunt(){
   this.formData['fishName']=this.selectedFish;
   console.log(this.formData);
     this.competitionService.addHunting(this.formData).subscribe(data=>{
-      this.successMessages="Congratilation You have Hunt a Big Fish ! do you want to try again "
+      this.successMessages="Congratilation You have Hunt a Big Fish ! do you want to try again ?"
     },(error)=>{
       this.errorMessages=error.error.message
     })
