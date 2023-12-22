@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CompetitionServiceService } from '../../Services/competition-service.service';
 import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
+import { Competition } from '../../../models/competition';
 
 @Component({
   selector: 'app-add-competition',
@@ -11,7 +12,14 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class AddCompetitionComponent {
   errorMessages: string = '';
   successMessages: string = '';
-  formData:any = {};
+  formData:Competition = {
+    date:'',
+    startTime:'',
+    endTime:'',
+    numberOfParticipants:0,
+    location:'',
+    amount:0
+  };
   
   constructor(
   public dialogRef: MatDialogRef<AddCompetitionComponent>,
@@ -19,7 +27,7 @@ export class AddCompetitionComponent {
   private router : Router
   ){}
   onSubmit(){
-    // alert(this.formData.endTime)
+  console.log(this.formData)
       this.competitionService.addCompetition(this.formData).subscribe( (response) => {
         console.log('Successfully submitted:', response);
         this.successMessages ="the competition has been added successfully";
@@ -29,7 +37,6 @@ export class AddCompetitionComponent {
       (error)=>{
         this.errorMessages = error.error.message;
       });
-      
   }
 
 }

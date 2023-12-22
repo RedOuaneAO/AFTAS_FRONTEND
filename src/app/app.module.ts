@@ -34,7 +34,7 @@ import { RankingModule } from './ranking/ranking.module';
     FishModule,
     MemberModule,
     LevelModule,
-    RankingModule
+    RankingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

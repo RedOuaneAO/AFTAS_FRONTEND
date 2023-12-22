@@ -16,6 +16,7 @@ import { HuntingComponent } from '../hunting/hunting.component';
 export class CompetitionComponent {
   competitions:any[] =[]; 
   errorMessages: string = '';
+  status:string ="Finished";
 
  constructor(
       private CompetitionService:CompetitionServiceService,
@@ -32,6 +33,7 @@ getCompetitions(){
   }, error=>{
     this.errorMessages = error.error.message;
   });
+  
 }
 
 addCompetition(){

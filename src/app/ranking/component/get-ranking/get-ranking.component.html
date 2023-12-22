@@ -1,0 +1,26 @@
+<div class="card shadow mb-4">
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table border table-hover" >
+            <thead>
+                <tr>
+                    <th scope="col">Fish Name</th>
+                    <th scope="col">Fish Level</th>
+                    <th scope="col">Fish Points</th>
+                    <th scope="col">Number of Fishs</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (hunt of huntedFish; track $index) {
+                <tr>
+                    <th scope="row">{{hunt.fish.name}}</th>
+                    <td>{{hunt.fish.level.code}}</td>
+                    <td>{{hunt.fish.level.points}}</td>
+                    <td>{{hunt.numberOfFish}}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>   
+    </div>
+</div>

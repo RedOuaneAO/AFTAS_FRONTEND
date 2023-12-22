@@ -6,6 +6,7 @@ import { MemberComponent } from './member/component/member/member.component';
 import { LevelComponent } from './level/component/level/level.component';
 import { AddMemberComponent } from './member/component/add-member/add-member.component';
 import { RankingComponent } from './ranking/component/ranking/ranking.component';
+import { PodiumComponent } from './ranking/component/podium/podium.component';
 
 const routes: Routes = [
   {path:'' , component:CompetitionComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path:'Levels' , component:LevelComponent},
   {path:'AddMember' , component:AddMemberComponent},
   {path:'Ranking' , component:RankingComponent},
+  {path:'Podium/:id' , component:PodiumComponent},
 ];
 
 @NgModule({

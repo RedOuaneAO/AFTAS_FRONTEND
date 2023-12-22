@@ -1,9 +1,49 @@
-<div>
-    <label for="fishName"> Competitions :</label>
-    <select name="selectedFish" id="fishName" class="form-control"  >
-        <option disabled selected value="">Select Competition</option>
-        <!-- @for (competition of competitions; track $index) {
-        <option value="{{competition.code}}">{{competition.code}}</option>
-    } -->
-    </select>
+<div class="card shadow mb-4">
+    <div class="card-header py-3 d-flex justify-content-between">
+        <h6 class="m-0 fw-bold text-primary">Competitions</h6>
+        <div class="">
+            <!-- <select name="selectedFish" id="fishName" class="form-control"  >
+                <option disabled selected value="">Select Competition</option>
+                @for (competition of competitions; track $index) {
+                <option value="{{competition.code}}">{{competition.code}}</option>
+                    }
+            </select> -->
+        </div>
+    </div>
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table border table-hover" >
+            <thead>
+                <tr>
+                    <th scope="col">#Code</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">StartTime</th>
+                    <th scope="col">EndTime</th>
+                    <!-- <th scope="col">NumberOfParticipants</th> -->
+                    <th scope="col">Location</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (competition of competitions; track $index) {
+                <tr>
+                    <th scope="row">{{competition.code}}</th>
+                    <td>{{competition.date}}</td>
+                    <td>{{competition.startTime}}</td>
+                    <td>{{competition.endTime}}</td>
+                    <!-- <td>{{competition.numberOfParticipants}}</td> -->
+                    <td>{{competition.location}}</td>
+                    <td>{{competition.amount}}</td>
+                    <td>
+                        <!-- <button class="btn btn-primary me-2" (click)="getRank(competition.code)" ><i class="fa-solid fa-ranking-star"></i></button> -->
+                        <button class="btn btn-primary me-2" (click)="getRank(competition.code)" ><i class="fa-solid fa-ranking-star"></i></button>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>   
+    <!-- <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator> -->
+    </div>
 </div>

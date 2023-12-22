@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-end py-4">
     <a (click)="addCompetition()" class="btn btn-primary">Add New Competition</a>
 </div>
-<div class="card shadow mb-4">
+<div class="card shadow mb-4 ">
     <div class="card-header py-3 ">
         <h6 class="m-0 fw-bold text-primary">Competitions</h6>
     </div>
@@ -17,6 +17,7 @@
                     <th scope="col">NumberOfParticipants</th>
                     <th scope="col">Location</th>
                     <th scope="col">Amount</th>
+                    <!-- <th scope="col">Status</th> -->
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -30,6 +31,7 @@
                     <td>{{item.numberOfParticipants}}</td>
                     <td>{{item.location}}</td>
                     <td>{{item.amount}}</td>
+                    <!-- <td><span class="bg-danger text-white rounded p-1 shadow">{{status}}</span></td> -->
                     <td><button class="btn btn-primary me-2" (click)="participate(item.code)" ><i class="fa-solid fa-address-book"></i></button>
                         <button class="btn btn-info text-white" (click)="addHunting(item.code)" >Add Hunting</button></td>
                 </tr>

@@ -1,0 +1,41 @@
+<div class="image-container">
+    <img src="../../../../assets/podium.png" class="image" width="570px">
+    @for (member of Rankings.slice(0, 3); track $index) {
+    <div class="overlay-text btn " *ngIf="$index == 0">{{member.member.fullName}}</div>
+     <div class="overlay-text2 btn " *ngIf="$index == 1">{{member.member.fullName}}</div>
+    <div class="overlay-text3 btn " *ngIf="$index == 2">{{member.member.fullName}}</div> 
+    }
+</div>
+  
+<div class="card shadow mb-4">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table border table-hover table-striped" >
+                <thead>
+                    <tr>
+                        <th scope="col">Competition Code</th>
+                        <th scope="col">Member Number</th>
+                        <th scope="col">Member Name</th>
+                        <th scope="col">Rank</th>
+                        <th scope="col">Score</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (rank of Rankings; track $index) {
+                    <tr>
+                        <td>{{rank.competitionCode}}</td>
+                        <td>{{rank.member.memberNum}}</td>
+                        <td>{{rank.member.fullName}}</td>
+                        <th>{{rank.rank}}</th>
+                        <td>{{rank.score}}</td>
+                        <td>
+                            <button class="btn btn-primary " (click)="getHuntedFish(rank.member.memberNum ,rank.competitionCode)"><i class="fa-solid fa-fish"></i></button>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>   
+        </div>
+    </div>
