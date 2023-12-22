@@ -1,4 +1,4 @@
-import { Component,Inject } from '@angular/core';
+import { Component} from '@angular/core';
 import { CompetitionServiceService } from '../../Services/competition-service.service';
 import { Router } from '@angular/router';
 import { AddCompetitionComponent } from '../add-competition/add-competition.component';
@@ -20,7 +20,6 @@ export class CompetitionComponent {
 
  constructor(
       private CompetitionService:CompetitionServiceService,
-      private router : Router,
       public dialog:MatDialog
       ){}
 
